@@ -1,1 +1,1 @@
-# latent_variable_models
+# Latent Variable Models
