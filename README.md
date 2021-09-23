@@ -1,1 +1,1 @@
-# Latent Variable Models
+# Uncertainty estimation models
