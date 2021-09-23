@@ -28,9 +28,6 @@ parser.add_argument('--decay_epoch', type=int, default=40, help='every n epochs 
 parser.add_argument('--feat_channel', type=int, default=256, help='reduced channel of saliency feat')
 parser.add_argument('--modal_loss', type=float, default=0.5, help='weight of the fusion modal')
 parser.add_argument('--focal_lamda', type=int, default=1, help='lamda of focal loss')
-parser.add_argument('--bnn_steps', type=int, default=6, help='BNN sampling iterations')
-parser.add_argument('--lvm_steps', type=int, default=6, help='LVM sampling iterations')
-parser.add_argument('--pred_steps', type=int, default=6, help='Predictive sampling iterations')
 parser.add_argument('--smooth_loss_weight', type=float, default=0.4, help='weight of the smooth loss')
 parser.add_argument('--latent_dim', type=int, default=32, help='ebm initial sigma')
 
@@ -47,8 +44,8 @@ discrminator.cuda()
 discrminator_params = discrminator.parameters()
 discrminator_optimizer = torch.optim.Adam(discrminator_params, opt.lr_dis)
 
-image_root = '/home/jingzhang/jing_files/RGBD_COD/dataset/train/Imgs/'
-gt_root = '/home/jingzhang/jing_files/RGBD_COD/dataset/train/GT/'
+image_root = './train/Imgs/'
+gt_root = './train/GT/'
 
 train_loader = get_loader(image_root, gt_root, batchsize=opt.batchsize, trainsize=opt.trainsize)
 total_step = len(train_loader)
