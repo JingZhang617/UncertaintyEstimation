@@ -43,8 +43,8 @@ generator.cuda()
 generator_params = generator.parameters()
 generator_optimizer = torch.optim.Adam(generator_params, opt.lr_gen)
 
-image_root = '/home/jingzhang/jing_files/RGBD_COD/dataset/train/Imgs/'
-gt_root = '/home/jingzhang/jing_files/RGBD_COD/dataset/train/GT/'
+image_root = './train/Imgs/'
+gt_root = './train/GT/'
 
 train_loader = get_loader(image_root, gt_root, batchsize=opt.batchsize, trainsize=opt.trainsize)
 total_step = len(train_loader)
