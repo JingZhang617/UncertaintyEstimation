@@ -22,7 +22,7 @@ parser.add_argument('--latent_dim', type=int, default=8, help='latent dimension'
 
 opt = parser.parse_args()
 
-dataset_path = '/home/jingzhang/jing_files/RGBD_COD/dataset/test/'
+dataset_path = './test/'
 
 generator = Pred_endecoder(channel=opt.feat_channel, latent_dim=opt.latent_dim)
 generator.load_state_dict(torch.load('./models/Model_50_gen.pth'))
